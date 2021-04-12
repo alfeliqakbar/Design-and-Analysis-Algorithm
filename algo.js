@@ -42,33 +42,28 @@ for( i = 0 ; i < lengthbs ; i++){
 
 console.timeEnd("Processing time");
 
-// // Selection Sort
-// function selectionSort(array){
-//     // const arr = array.slice();
+// Selection Sort
+function selectionSort(array){
+    for( let i = 0 ; i < array.length - 1 ; i++ ){
+        let minIndex = i;
+        for(let j = i + 1 ; j < array.length ; j++){
+            if (array[j] < array[minIndex]){
+                minIndex = j;
+            }
+        };
+        [array[i], array[minIndex]] = [array[minIndex], array[i]];
+        // const temp = array[i];
+        // array[i] = array[minIndex];
+        // array[minIndex = temp];
+    }
+    return array;
+}
 
-//     for( let i = 0 ; i < array.length - 1 ; i++ ){
-//         let minIndex = i;
-//         for(let j = i + 1 ; j < array.length ; j++){
-//             if (array[j] < array[minIndex]){
-//                 minIndex = j;
-//             }
-//         };
-//         [array[i], array[minIndex]] = [array[minIndex], array[i]];
-//         // const temp = array[i];
-//         // array[i] = array[minIndex];
-//         // array[minIndex = temp];
-//     }
-//     return array;
-// }
+// Log selection sort
+const output = selectionSort(A);
+const lengthss = output.length;
+for( i = 0 ; i < lengthss ; i++){
+        console.log(A[i]);
+    };
 
-// const output = selectionSort(A);
-// const lengthss = output.length;
-// for( i = 0 ; i < lengthss ; i++){
-//         console.log(A[i]);
-//     };
-
-// console.timeEnd("Processing time");
-
-// for( i = 0 ; i < arrayLength ; i++){
-//     console.log(data);
-//     }
+console.timeEnd("Processing time");
